@@ -37,9 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     if (_emailError == null && _passwordError == null) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
-      );
+      Navigator.of(
+        context,
+      ).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen()));
     }
   }
 
@@ -75,18 +75,46 @@ class _LoginScreenState extends State<LoginScreen> {
     final screenWidth = screenSize.width;
     final isCompact = screenWidth < 360;
     final isWide = screenWidth >= 700;
-    final horizontalPadding = isWide ? 32.0 : isCompact ? 16.0 : 24.0;
-    final cardPadding = isWide ? 36.0 : isCompact ? 20.0 : 32.0;
+    final horizontalPadding = isWide
+        ? 32.0
+        : isCompact
+        ? 16.0
+        : 24.0;
+    final cardPadding = isWide
+        ? 36.0
+        : isCompact
+        ? 20.0
+        : 32.0;
     final cardMaxWidth = isWide ? 460.0 : 420.0;
-    final titleFontSize = isWide ? 38.0 : isCompact ? 28.0 : 32.0;
-    final subtitleFontSize = isWide ? 18.0 : isCompact ? 14.0 : 16.0;
+    final titleFontSize = isWide
+        ? 38.0
+        : isCompact
+        ? 28.0
+        : 32.0;
+    final subtitleFontSize = isWide
+        ? 18.0
+        : isCompact
+        ? 14.0
+        : 16.0;
     final titleSpacing = isCompact ? 32.0 : 40.0;
     final fieldSpacing = isCompact ? 16.0 : 20.0;
-    final buttonHeight = isWide ? 58.0 : isCompact ? 50.0 : 54.0;
+    final buttonHeight = isWide
+        ? 58.0
+        : isCompact
+        ? 50.0
+        : 54.0;
     final cardRadius = isCompact ? 20.0 : 24.0;
     final inputRadius = isCompact ? 10.0 : 12.0;
-    final topCircleSize = isWide ? 240.0 : isCompact ? 140.0 : 200.0;
-    final bottomCircleSize = isWide ? 180.0 : isCompact ? 110.0 : 150.0;
+    final topCircleSize = isWide
+        ? 240.0
+        : isCompact
+        ? 140.0
+        : 200.0;
+    final bottomCircleSize = isWide
+        ? 180.0
+        : isCompact
+        ? 110.0
+        : 150.0;
 
     return Scaffold(
       body: Container(
@@ -213,8 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     'LOGIN',
                                     style: AppStyles.button.copyWith(
                                       fontSize: isCompact ? 14.0 : 16.0,
-                                      letterSpacing:
-                                          isCompact ? 1.0 : 1.2,
+                                      letterSpacing: isCompact ? 1.0 : 1.2,
                                     ),
                                   ),
                                 ),
@@ -233,7 +260,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
@@ -258,10 +285,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: AppStyles.label.copyWith(fontSize: labelFontSize),
-        ),
+        Text(label, style: AppStyles.label.copyWith(fontSize: labelFontSize)),
         const SizedBox(height: 8),
         TextField(
           controller: controller,
@@ -273,7 +297,7 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyle(
-              color: AppColors.primaryText.withValues(alpha: 0.3),
+              color: AppColors.primaryText.withOpacity(0.3),
               fontSize: textFontSize,
             ),
             prefixIcon: Icon(
