@@ -282,6 +282,9 @@ class TripDetailsScreen extends StatelessWidget {
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             contentPadding: EdgeInsets.symmetric(
               vertical: isCompact ? 2 : 4,
             ),

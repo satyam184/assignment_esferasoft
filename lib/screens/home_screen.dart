@@ -110,9 +110,7 @@ class HomeScreen extends StatelessWidget {
                               decoration: InputDecoration(
                                 hintText: 'Search your trips...',
                                 hintStyle: TextStyle(
-                                  color: AppColors.primaryText.withValues(
-                                    alpha: 0.4,
-                                  ),
+                                  color: AppColors.primaryText.withOpacity(0.4),
                                   fontSize: isCompact ? 14.0 : 16.0,
                                 ),
                                 prefixIcon: Icon(

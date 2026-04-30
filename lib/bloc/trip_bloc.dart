@@ -88,10 +88,12 @@ class TripBloc extends Bloc<TripEvent, TripState> {
       return trips;
     }
 
-    return trips
-        .where(
-          (trip) => trip.title.toLowerCase().contains(normalizedQuery),
-        )
-        .toList();
+    return trips.where((trip) {
+      final titleMatch = trip.title.toLowerCase().contains(normalizedQuery);
+      final pickupMatch = trip.pickup.toLowerCase().contains(normalizedQuery);
+      final dropMatch = trip.drop.toLowerCase().contains(normalizedQuery);
+
+      return titleMatch || pickupMatch || dropMatch;
+    }).toList();
   }
 }
