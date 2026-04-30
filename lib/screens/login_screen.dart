@@ -246,21 +246,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: isCompact ? 20 : 24),
-                              Center(
-                                child: Text(
-                                  "Don't have an account? Sign Up",
-                                  style: AppStyles.subHeading.copyWith(
-                                    fontSize: isCompact ? 13.0 : 14.0,
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
                         ),
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
@@ -297,7 +288,7 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyle(
-              color: AppColors.primaryText.withOpacity(0.3),
+              color: AppColors.primaryText.withValues(alpha: 0.3),
               fontSize: textFontSize,
             ),
             prefixIcon: Icon(
