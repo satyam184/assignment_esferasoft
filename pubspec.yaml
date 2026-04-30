@@ -1,0 +1,23 @@
+name: assignment_esferasoft
+description: A simple Flutter app for trips and bookings.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.6
+  google_fonts: ^6.2.1
+  path_provider: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
