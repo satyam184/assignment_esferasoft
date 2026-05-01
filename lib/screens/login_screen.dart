@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String? _emailError;
   String? _passwordError;
+  bool _isPasswordObscured = true;
 
   @override
   void dispose() {
@@ -280,7 +281,7 @@ class _LoginScreenState extends State<LoginScreen> {
         const SizedBox(height: 8),
         TextField(
           controller: controller,
-          obscureText: isPassword,
+          obscureText: isPassword ? _isPasswordObscured : false,
           style: TextStyle(
             color: AppColors.primaryText,
             fontSize: textFontSize,
@@ -288,7 +289,7 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             hintText: hint,
             hintStyle: TextStyle(
-              color: AppColors.primaryText.withValues(alpha: 0.3),
+              color: AppColors.primaryText.withOpacity(0.3),
               fontSize: textFontSize,
             ),
             prefixIcon: Icon(
@@ -296,6 +297,22 @@ class _LoginScreenState extends State<LoginScreen> {
               color: AppColors.secondaryText,
               size: iconSize,
             ),
+            suffixIcon: isPassword
+                ? IconButton(
+                    icon: Icon(
+                      _isPasswordObscured
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      color: AppColors.secondaryText,
+                      size: iconSize,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordObscured = !_isPasswordObscured;
+                      });
+                    },
+                  )
+                : null,
             filled: true,
             fillColor: AppColors.glassFill,
             errorText: error,
